@@ -1,0 +1,60 @@
+using System;
+/*
+ * Napisati klasu konvertor valute.Ova klasa bi trebalo da ima
+ * atribut kursEvra koji je realan broj i oznacava vrednost evra
+ * atribut kursDolara koji je realan broj i oznacava vrednost Dolara
+ * svojstva prebacivanja iz evra u dinare i obrnuto i isto tako za dolare
+ */ 
+namespace konvertorvaluteApp
+{
+    class KonvertorValute
+    {
+
+        private double kursEvra;  
+        private double kursDolara;
+        
+        
+        public double KursEvra
+        {
+            get { return kursEvra; }
+            set { kursEvra = value; }
+        }
+        public double KursDolara
+        {
+            get { return kursDolara; }
+            set { kursDolara = value; }
+        }
+       public double KonvertujDinareUEvre(double dinari)
+        {
+            return dinari / KursEvra;
+        }
+    public double KonvertujDinareUDolare(double dinari)
+        {
+            return dinari/KursDolara
+        }
+        public double KonvertujDolareUDinare(double dolari)
+        {
+            return dolari * KursDolara;
+        }
+        public double KonvertujEvreUDinare(double evri)
+        {
+            return evri * KursEvra;
+        }
+        public double KonvertujEvreUDolare(double evri)
+        {
+            return evri * KursEvra / KursDolara;
+        }
+        public double KonvertujDolareUEvre(double dolari)
+        {
+            return dolari * KursDolara / KursEvra;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+        }
+    }
+}
