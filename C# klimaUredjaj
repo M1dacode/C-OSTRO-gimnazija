@@ -1,0 +1,77 @@
+using System;
+/*
+ Napraviti klasu KlimaUredjaj. Klasa trebalo bi da ima:
+Atribut trenutnaTemperatura koja oznacava temp u celzijusima 
+na koju je trenutno podesena klima
+Atribut rezimRada koji oznacav da li klima greje, hladi ili radi automatski.
+Ako greje atrribut ima vrednost 'G', ako hladi 'H' a ako radi automatski
+'A'. Na pocetku klima ima automatski rezim rada
+Koriscenjem svojstava podesi trenututnuTemperaturu na konkretnu unetu temperaturu
+
+Metodu SmanjiTemperaturu koja smanjuje trenutnu temperaturu za jedan stepen
+Metodu PovecajTemperaturu koja povecava temperaturu za jedan stepen
+
+Metodu UkljuciRezimGrejanja koja podesava vrednost atributa rezimRada na 'G' 
+Metodu UkljuciRezimHladjenja -||- rezimRada na  'H'
+Metodu UkljuciRezimAutomatski -||- rezimRada na  'A'
+Metodu IspisiTemperaturu koja ispisuje trenutna podesavanja klima uredjaja
+rezim rada i temperaturu
+Napraviit dva objekta klase KlimaUredjaj Prvi klimu podesiti na 27 a drugu
+da hladi na 20 Ispisati parametre obe klime
+ako je temp iznad 20 klima u rezimu rada H a ispod 20 G
+ */
+namespace KlimaApp
+{
+    class KlimaUredjaj
+    {
+        private int trenutnaTemperatura;
+        private char rezimRada = 'A';
+
+        public int TrenutnaTemperatura
+        {
+            get { return trenutnaTemperatura; }
+            set { trenutnaTemperatura = value; }
+        }
+        public char RezimRada
+        {
+            get { return rezimRada; }
+            set { rezimRada = value; }
+        }
+        public int SmanjiTemperaturu()
+        {
+            return TrenutnaTemperatura - 1;
+        }
+        public int PovecajTemperaturu()
+        {
+            return TrenutnaTemperatura - 1;
+        }
+        public void UkljuciRezimGrejanja()
+        {
+            rezimRada = 'G';
+        }
+        public void UkljuciRezimHladjenja()
+        {
+            RezimRada = 'H';
+        }
+        public void UkljuciRezimAutomatski()
+        {
+            RezimRada = 'A';
+        }
+        public void IspisiTemperaturu()
+        {
+            Console.WriteLine("trenutna temperatura klime je: {0:d}, rezim rada klime je {1:c}", trenutnaTemperatura, rezimRada);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            KlimaUredjaj klima1 = new KlimaUredjaj()
+            {
+                TrenutnaTemperatura = 27,
+                RezimRada = 'A'
+            };
+
+        }
+    }
+}
