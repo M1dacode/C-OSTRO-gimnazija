@@ -1,0 +1,45 @@
+using System;
+
+namespace KalkulatorApp
+{
+    class Number
+    {
+        int n;
+        int[] niz;
+
+        public int N
+        {
+            get => n;
+            set => n = value;
+        }
+        public Number()
+        {
+            var values = Console.ReadLine().Split();
+            n = values.Length;
+            niz = new int[n];
+            for(int i = 0; i < n; i++)
+            {
+                niz[i] = int.Parse(values[i]);
+            }
+            
+            
+        }
+        public void Ispis()
+        {
+            foreach(var item in niz)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.Write("\n");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Number niz = new Number();
+            niz.Ispis();
+            Console.ReadKey();
+        }
+    }
+}
