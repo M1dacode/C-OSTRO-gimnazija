@@ -1,0 +1,57 @@
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Text;
+
+namespace KalkulatorApp
+{
+    class Number
+    {
+        int n;
+        int[] niz;
+
+        public int N
+        {
+            get => n;
+            set => n = value;
+        }
+        Random r = new Random();
+        public Number(int n)
+        {
+            this.n = n;
+            niz = new int[n];
+
+            
+            for (int i = 0; i < n; i++)
+            {
+                niz[i] = r.Next(1, 11);
+            }
+            
+
+        }
+        public void Statistika()
+        {
+            Console.WriteLine($"Suma niza je: {niz.Sum()}, "+
+                $"\nProsek niza je: {niz.Average():f}");
+        }
+        public void Ispis()
+        {
+            foreach (var item in niz)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.Write("\n");
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Number n1 = new Number(10);
+            n1.Ispis();
+            n1.Statistika();
+            Console.ReadKey();
+        }
+    }
+}
