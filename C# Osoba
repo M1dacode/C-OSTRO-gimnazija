@@ -1,0 +1,53 @@
+using System;
+
+namespace OsobaApp
+{
+    class Osoba
+    {
+       private string ime;
+       private string prezime;
+       private string adresa;
+
+        public string Ime
+        {
+            get { return ime; }
+            set { ime = value; }
+        }
+        public string Prezime
+        {
+            get { return prezime; }
+            set { prezime = value; }
+        }
+        public string Adresa
+        {
+            get { return adresa; }
+            set { adresa = value; }
+        }
+        public void Unos()
+        {
+            Console.WriteLine("Unesi ime, prezime, i adresu:" + "redom sa razmakom");
+
+            ime = Console.ReadLine();
+            prezime = Console.ReadLine();
+            adresa = Console.ReadLine();
+        }
+        public void Ispis()
+        {
+            Console.WriteLine($"Ime: {ime}");
+            Console.WriteLine($"Prezime: {prezime}");
+            Console.WriteLine($"Adresa: {adresa}");
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Osoba o1 = new Osoba();
+            o1.Unos();
+            o1.Ispis();
+            Console.ReadKey();
+            
+        }
+    }
+}
